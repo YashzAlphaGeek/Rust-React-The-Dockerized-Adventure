@@ -7,18 +7,18 @@ async fn main() {
         .allow_methods(vec!["GET"])
         .allow_headers(vec!["content-type"]);
 
-    // Define the health check route
+    // Health Check Route
     let health_check = warp::path!("health")
         .map(|| warp::reply::json(&"OK"));
 
-    // Define the route for the "Hello, World!" response
+    // Hello World HTML Format
     let hello = warp::path!("hello" / "world")
         .map(|| warp::reply::html("<h1>Hello, World!</h1>"));
 
-    // Combine routes and apply CORS, cloning `cors` for each route
+    // CORS for Route
     let routes = health_check.with(cors.clone()).or(hello.with(cors));
 
-    // Start the server on port 3030
+    // Starting the server 3030
     warp::serve(routes)
         .run(([0, 0, 0, 0], 3030))
         .await;
