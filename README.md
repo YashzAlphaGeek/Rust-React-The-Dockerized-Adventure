@@ -10,10 +10,12 @@ Client-Server interaction where the frontend relies on the backend to provide dy
 
 ## Prerequisites
 
-### For Rust Service
+### For Rust Service Backend
 
 - Ensure you have [Rust](https://www.rust-lang.org/tools/install) installed on your machine.
 - Install Cargo, the Rust package manager (comes with the Rust installation).
+
+[Warp](https://github.com/seanmonstar/warp)
 
 ### For React Frontend
 
@@ -35,6 +37,14 @@ To run the Rust service:
    ```bash
    cargo run
 
-Make sure the Rust service is running on http://localhost:3030/hello/world
+## Running the Docker Compose
+
+- [Docker](https://www.docker.com/get-started) installed on your system.
+- [Docker Compose](https://docs.docker.com/compose/install/) installed on your system.
+
+   ```bash
+   docker-compose up --build
+
+
 
 

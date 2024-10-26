@@ -1,16 +1,16 @@
-# Use the official Rust image as the base image
-FROM rust:latest as builder
+# Stage 1: Build the Rust application
+FROM rust:latest AS builder
 
-# Create a new directory for the application
+# Set the working directory
 WORKDIR /app
 
-# Copy the Cargo.toml and Cargo.lock files
+# Copy the manifest files
 COPY Cargo.toml Cargo.lock ./
 
-# Create a new directory for the source code
+# Create a dummy main.rs to cache dependencies
 RUN mkdir src && echo "fn main() { println!(\"dummy\"); }" > src/main.rs
 
-# Build the dependencies
+# Build dependencies
 RUN cargo build --release
 RUN rm -f target/release/deps/rust_service*
 
@@ -20,13 +20,18 @@ COPY ./src ./src
 # Build the final release
 RUN cargo build --release
 
-# Use a smaller image for the final build
-FROM debian:buster-slim
+# Stage 2: Use an Ubuntu-based image with newer GLIBC versions for runtime
+FROM ubuntu:22.04
 
-# Copy the compiled binary from the builder
+# Install necessary libraries (if any)
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the compiled binary from the builder stage
 COPY --from=builder /app/target/release/rust_service /usr/local/bin/rust_service
 
-# Expose the port on which the service will run
+# Expose the port that the service will listen on
 EXPOSE 3030
 
 # Command to run the application
