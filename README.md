@@ -15,7 +15,9 @@ Client-Server interaction where the frontend relies on the backend to provide dy
 - Ensure you have [Rust](https://www.rust-lang.org/tools/install) installed on your machine.
 - Install Cargo, the Rust package manager (comes with the Rust installation).
 
-[Warp](https://github.com/seanmonstar/warp)
+   Warp uses a filter-based system to handle requests, making it easy to compose handlers for different routes. It's ideal for building RESTful APIs and web applications due to its ergonomic syntax and powerful functionality.
+
+   [Warp](https://docs.rs/warp/latest/warp/)
 
 ### For React Frontend
 
