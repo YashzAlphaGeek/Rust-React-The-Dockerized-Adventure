@@ -18,12 +18,11 @@ Client-Server interaction where the frontend relies on the backend to provide dy
 ### For React Frontend
 
 - Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
-- Install React and React DOM, along with their type definitions for TypeScript:
+- Install React and React DOM, along with their type definitions for React:
   ```bash
   npm install react react-dom
   npm install --save-dev @types/react @types/react-dom
 
-  
 ## Running the Rust Service
 
 To run the Rust service:
