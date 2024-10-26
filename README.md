@@ -10,7 +10,7 @@ Client-Server interaction where the frontend relies on the backend to provide dy
 
 ## Execution Of Rust HTTP service and a React frontend with Docker Compose
 
-![](https://github.com/YashzAlphaGeek/Rust-React-The-Dockerized-Adventure/gif/DockerCompose_Backend_Frontend.mp4)
+![](https://github.com/YashzAlphaGeek/Rust-React-The-Dockerized-Adventure/blob/master/docs/DockerCompose_Backend_Frontend.gif)
 
 ## Prerequisites
 
