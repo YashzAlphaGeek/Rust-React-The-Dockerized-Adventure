@@ -8,6 +8,10 @@ Client-Server interaction where the frontend relies on the backend to provide dy
 
 ![image](https://github.com/user-attachments/assets/9d28f272-7be8-4c70-83b6-867afc6c46c6)
 
+## Execution Of Rust HTTP service and a React frontend
+
+![](https://github.com/YashzAlphaGeek/Rust-React-The-Dockerized-Adventure/gif/DockerCompose_Backend_Frontend.mp4)
+
 ## Prerequisites
 
 ### For Rust Service Backend
@@ -46,7 +50,5 @@ To run the Rust service:
 
    ```bash
    docker-compose up --build
-
-
 
 
