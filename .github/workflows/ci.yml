@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      rust_service:
+        image: rust:latest
+        ports:
+          - 3030:3030
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build Rust service
+        run: |
+          cd rust_service
+          cargo build --release
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build

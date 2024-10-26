@@ -1,0 +1,9 @@
+[package]
+name = "rust_service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+warp = "0.3"         # Web framework for building HTTP servers
+tokio = { version = "1", features = ["full"] }  # Async runtime
+
