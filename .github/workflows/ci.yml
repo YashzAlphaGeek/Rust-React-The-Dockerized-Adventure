@@ -48,5 +48,5 @@ jobs:
 
       - name: Push Docker Images
         run: |
-          docker push ghcr.io/<GITHUB_USERNAME>/<REPO_NAME>/rust_service:latest
-          docker push ghcr.io/<GITHUB_USERNAME>/<REPO_NAME>/frontend:latest
+          docker push ghcr.io/YashzAlphaGeek/Rust-React-The-Dockerized-Adventure/rust_service:latest
+          docker push ghcr.io/YashzAlphaGeek/Rust-React-The-Dockerized-Adventure/frontend:latest
