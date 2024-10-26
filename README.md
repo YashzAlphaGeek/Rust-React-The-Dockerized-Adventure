@@ -1,6 +1,9 @@
-# Hello World Project
+# RUST - Hello World Project
 
 This project consists of a Rust HTTP service and a React frontend. The frontend fetches a message from the Rust service, and both are containerized with Docker. This README includes instructions for setting up the project and running it locally, including running the Rust service using Cargo.
+
+![image](https://github.com/user-attachments/assets/4f3482cd-f7cc-41f2-947c-cee4f770afde)
+
 
 ## Prerequisites
 
