@@ -12,6 +12,6 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3000:80"  # Nginx serves on port 80
     depends_on:
       - rust_service
