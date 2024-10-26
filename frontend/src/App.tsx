@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const App: React.FC = () => {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState<string>('');
 
   useEffect(() => {
     fetch('http://localhost:3030/hello/world')
@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>{message}</h1>
+      <h1 dangerouslySetInnerHTML={{ __html: message }} />
     </div>
   );
 };
