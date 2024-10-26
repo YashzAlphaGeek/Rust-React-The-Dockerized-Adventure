@@ -34,3 +34,19 @@ jobs:
           cd frontend
           npm install
           npm run build
+
+      - name: Build Docker Images
+        run: |
+          # Build Rust service image
+          docker build -t ghcr.io/YashzAlphaGeek/Rust-React-The-Dockerized-Adventure/rust_service:latest ./rust_service
+
+          # Build Frontend image
+          docker build -t ghcr.io/YashzAlphaGeek/Rust-React-The-Dockerized-Adventure/frontend:latest ./frontend
+
+      - name: Log in to GitHub Package Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u <GITHUB_USERNAME> --password-stdin
+
+      - name: Push Docker Images
+        run: |
+          docker push ghcr.io/<GITHUB_USERNAME>/<REPO_NAME>/rust_service:latest
+          docker push ghcr.io/<GITHUB_USERNAME>/<REPO_NAME>/frontend:latest
